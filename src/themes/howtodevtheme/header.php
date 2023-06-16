@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <title>Document</title>
+    <?php wp_head() ?>
 </head>
 <body>
 <div class="site" id="page">
