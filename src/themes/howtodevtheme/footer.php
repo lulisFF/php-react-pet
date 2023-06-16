@@ -6,16 +6,11 @@
 */
 ?>
 <footer class="site-footer" id="colophon">
+
     <div class="site-info">
         <nav class="footer-navigation" id="footer-navigation">
             <h2>Menu</h2>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Products</li>
-                <li>Learn</li>
-                <li>Contact</li>
-            </ul>
+	        <?php wp_nav_menu(array('theme_location' => 'footer-menu')) ?>
         </nav>
         <div class="general-info">
             <h2>General info</h2>
@@ -34,9 +29,9 @@
     <div class="copyright-info">
         <p>Copyright &#169; 2023. All Rights Reserved</p>
     </div>
-    <?php wp_footer(); ?>
 </footer>
 </div>
 
+    <?php wp_footer(); ?>
 </body>
 </html>
