@@ -34,6 +34,7 @@
     <div class="copyright-info">
         <p>Copyright &#169; 2023. All Rights Reserved</p>
     </div>
+    <?php wp_footer(); ?>
 </footer>
 </div>
 
