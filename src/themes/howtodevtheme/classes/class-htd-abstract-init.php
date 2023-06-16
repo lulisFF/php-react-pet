@@ -96,8 +96,8 @@ abstract class HTD_Abstract_Init {
 	 * @return void
 	 */
 	protected function template( $file ){
-		$path = $this->is_admin ? 'admin' : '';
-		require ($this->theme_path . $path . '/templates' . $file);
+		$path = $this->is_admin ? '/admin' : '';
+		require ($this->theme_path . $path . '/templates/' . $file);
 	}
 
 	/**

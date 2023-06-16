@@ -9,9 +9,15 @@ const sassPath = './sass';
 const cssPath = './css';
 const outputPath = 'js/dist';
 const localDomain = 'http://localhost';
+
+const adminJsPath = './admin/js';
+const adminSassPath = './admin/sass';
+
 const entryPoints = {
     'index': jsPath + '/index.js',
-    'style': sassPath + '/style.scss'
+    'style': sassPath + '/style.scss',
+    '../../admin/js/dist/index':  adminJsPath + '/index.js',
+    '../admin/css/style':  adminSassPath + '/style.scss'
 }
 
 
@@ -28,7 +34,7 @@ module.exports = {
         }),
         new BrowserSyncPlugin({
             proxy: localDomain,
-            files: [cssPath + '**/*',outputPath + '**/*.js', './**/*.php'],
+            files: [cssPath + '**/*', '**/*.js','./**/*.jsx', './**/*.php'],
             injectCss: true,
             notify: false
         },{reload:true})
@@ -58,6 +64,16 @@ module.exports = {
                         },
                     },
                 ]
+            },
+            {
+                test: /\.?(js|jsx|tsx)$/i,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options:{
+                        presets: ['@babel/preset-react'],
+                    },
+                },
             }
         ]
     }
