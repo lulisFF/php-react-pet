@@ -17,25 +17,17 @@
     <title>Document</title>
     <?php wp_head() ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div class="site" id="page">
     <header id="masthead" class="site-header">
         <div class="site-branding">
             LOGO
         </div><!--     .site-branding-->
         <nav id="site-navigation" class="main-navigation">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Product</li>
-                <li>Learn</li>
-                <li>Contact</li>
-            </ul>
+            <?php wp_nav_menu(array('theme_location' => 'header-menu')) ?>
         </nav>
         <nav id="secondary-navigation" class="secondary-navigation">
-            <ul>
-                <li>Account</li>
-                <li>Cart</li>
-            </ul>
+	        <?php wp_nav_menu(array('theme_location' => 'header-secondary-menu')) ?>
         </nav>
     </header><!--    #masterhead-->
